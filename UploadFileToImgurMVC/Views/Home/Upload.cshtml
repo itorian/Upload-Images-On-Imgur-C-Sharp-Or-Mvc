@@ -1,0 +1,17 @@
+﻿@model UploadFileToImgurMVC.Models.UploadToImgur
+
+@{
+    ViewBag.Title = "About";
+}
+
+<div>
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div>
+            @Html.LabelFor(x => x.ImageFile)
+            @Html.TextBoxFor(x => x.ImageFile, new { type = "file", multiple = "true" })
+            @Html.ValidationMessageFor(x => x.ImageFile)
+        </div>
+        <button type="submit">Upload File</button>
+    }
+</div>
